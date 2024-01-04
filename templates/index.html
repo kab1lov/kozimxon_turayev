@@ -22,15 +22,11 @@
                 <div class="nav-items flex flex-col lg:flex-row items-center justify-center lg:justify-between lg:w-[80%] w-full h-screen lg:h-fit absolute lg:static top-0 right-[-200%] z-[-100] bg-[#1E293B] lg:bg-transparent border border-[white] lg:border-none transition-all ease duration-300">
                     <div>
                         <ul class="flex flex-col lg:flex-row items-center gap-[30px] openSans-semibold lg:text-lg ">
-                            <li><a href="">Biz haqimizda</a></li>
-                            <li><a href="">Kurs o'quv dasturi</a></li>
-                            <li><a href="">O'quvchilar fikri</a></li>
-                            <li><a href="">Aloqa</a></li>
                         </ul>
 
                     </div>
                     <div class="text-xl openSans-bold pt-[30px] lg:p-0">
-                        <a href="tel:+998 91 001 05 09">+998 91 001 05 09</a>
+                        <a href="tel:{{ contact.phone }}"> {{ contact.phone }}</a>
                     </div>
                 </div>
                 <div class="block lg:hidden cursor-pointer absolute right-10 top-5 md:top-10">
@@ -43,13 +39,11 @@
         <div class="container relative">
             <div class="h-full space-y-10 lg:space-y-0">
                 <div class="max-w-[650px] pt-20 md:pt-[150px] relative z-10">
-                    <h3 class="text-center xs:text-left text-xl sm:text-[30px] openSans-regular pb-[10px]">HR
-                        Menejment</h3>
+                    <h3 class="text-center xs:text-left text-xl sm:text-[30px] openSans-regular pb-[10px]">{{ header.sub_title }}</h3>
                     <h1 class="text-center xs:text-left text-[30px] sm:text-[38px] md:text-[48px] lexend-medium pb-5">
-                        Asablaringizni tamom qilayotgan sabab - bu xodimlaringizni noto'g'ri boshqarayotga<span
-                            class="inline xs:hidden">-</span><br class="inline xs:hidden">ningizdir</h1>
-                    <p class="text-center xs:text-left xs:text-xl openSans-regular pb-[30px]">5-avgust kuni
-                        boshlanadigan kursimizda xodimlar bilan bog’liq muammolarga professional yechimlar beramiz</p>
+                        {{ header.title }}<span
+                            class="inline xs:hidden">-</span><br class="inline xs:hidden"></h1>
+                    <p class="text-center xs:text-left xs:text-xl openSans-regular pb-[30px]">{{ header.description }}</p>
                     <div class="flex flex-col xs:flex-row gap-[30px] w-full">
                         <a href=""
                            class="py-3 sm:py-[14px] px-4 sm:px-7 text-center rounded-[4px] bg-[#F1F5F9] text-[#1E293B] sm:text-xl montserrat-bold">Bepul
@@ -60,7 +54,7 @@
                     </div>
                 </div>
                 <div class="lg:absolute static top-0 right-[-30px] aspect-square lg:aspect-[0]">
-                    <img src="{% static 'project/images/image 6.png' %}" alt="" class="w-full h-full">
+                    <img src="{{ header.image.url }}" alt="" class="w-full h-full">
                 </div>
             </div>
         </div>
@@ -68,7 +62,7 @@
     <section class="py-10 md:py-[100px]">
         <div class="container">
             <div class="w-full lg:h-[685px] aspect-square">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Sz7qa6RJhGA?si=FZEYaAa1ggKSbag6"
+                <iframe width="100%" height="100%" src="{{ why_we.link }}"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
@@ -78,22 +72,23 @@
     <section class="pb-[50px]">
         <div class="container">
             <div class="pb-[60px]">
-                <h2 class="text-center text-[30px] sm:text-[38px] md:text-[48px] lexend-medium pb-[10px]">Nega aynan
-                    Biz?</h2>
-                <p class="text-center xs:text-2xl openSans-regular">Biz bilan kompaniyangiz rivojini keyingi bosqichga
-                    olib chiqing</p>
+                <h2 class="text-center text-[30px] sm:text-[38px] md:text-[48px] lexend-medium pb-[10px]">{{ why_we.sub_title }}</h2>
+                <p class="text-center xs:text-2xl openSans-regular">{{ why_we.title }}</p>
             </div>
             <div class="grid grid-cols-1 xs:grid-cols-4 md:grid-cols-3 lexend-regular gap-10">
                 <div class="text-center xs:col-span-2 md:col-span-1">
-                    <h3 class="text-[33px] md:text-[45px] lg:text-[60px]"><span id="value1">100</span>+</h3>
+                    <h3 class="text-[33px] md:text-[45px] lg:text-[60px]"><span
+                            id="value1">{{ why_we.num_company }}</span>+</h3>
                     <p class="text-lg md:text-[25px] lg:text-[30px]">Yirik kompaniyalar</p>
                 </div>
                 <div class="text-center xs:col-span-2 md:col-span-1">
-                    <h3 class="text-[33px] md:text-[45px] lg:text-[60px]"><span id="value2">5000</span>+</h3>
+                    <h3 class="text-[33px] md:text-[45px] lg:text-[60px]"><span id="value2">{{ why_we.students }}</span>+
+                    </h3>
                     <p class="text-lg md:text-[25px] lg:text-[30px]">O'quvchilar</p>
                 </div>
                 <div class="text-center xs:col-span-4 md:col-span-1">
-                    <h3 class="text-[33px] md:text-[45px] lg:text-[60px]"><span id="value3">17</span>+</h3>
+                    <h3 class="text-[33px] md:text-[45px] lg:text-[60px]"><span
+                            id="value3">{{ why_we.experiences }}</span>+</h3>
                     <p class="text-lg md:text-[25px] lg:text-[30px]">Yillik tajriba</p>
                 </div>
             </div>
@@ -103,13 +98,10 @@
         <div class="container">
             <div class="flex flex-col lg:flex-row items-center justify-between gap-[60px]">
                 <div class="space-y-5 xs:space-y-[60px] xs:text-2xl openSans-regular">
-                    <p>Tizimlashgan kompaniyalardan doimo orqadasiz chunki yangi bilimlarni olishni hali ham
-                        kechiktiryapsiz!</p>
-                    <p><span class="text-lg sm:text-3xl openSans-semibold">BIZ</span> bilan o’zingizga ham
-                        xodimlaringizga ham manfaatli bo’lgan biznes egasiga aylaning</p>
+                    <p>{{ why_we.description }}</p>
                 </div>
                 <div class="w-full lg:h-[450px]">
-                    <img src="{% static 'project/images/pic.png' %}" alt="" class="w-full h-full">
+                    <img src="{{ why_we.image.url }}" alt="" class="w-full h-full">
                 </div>
             </div>
         </div>
@@ -120,264 +112,35 @@
                 <h2 class="text-center text-[30px] sm:text-[38px] md:text-[48px] lexend-medium pb-[50px]">Nega aynan
                     Biz?</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5 pb-[30px]">
-                    <div class="shrink-0 h-full lg:col-span-2">
-                        <div class="h-[18%] bg-[#0F172A] text-center py-5 rounded-t-[10px]">
-                            <p class="lexend-medium text-2xl md:text-[30px]">1-Natija</p>
-                        </div>
-                        <div class="h-[82%] bg-white px-5 py-10 text-[#0F172A] rounded-b-[10px]">
-                            <p class="lexend-regular text-xl md:text-2xl pb-[30px]">Kompaniya missiyasi va
-                                qadriyatlarini ishlab chiqish</p>
-                            <div class="space-y-3">
-                                <div class="flex items-center gap-[10px]">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
-                                             viewBox="0 0 24 25" fill="none">
-                                            <path d="M9 11.5L12 14.5L22 4.5" stroke="#0F172A" stroke-width="1.5"
-                                                  stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M21 12.5V19.5C21 20.0304 20.7893 20.5391 20.4142 20.9142C20.0391 21.2893 19.5304 21.5 19 21.5H5C4.46957 21.5 3.96086 21.2893 3.58579 20.9142C3.21071 20.5391 3 20.0304 3 19.5V5.5C3 4.96957 3.21071 4.46086 3.58579 4.08579C3.96086 3.71071 4.46957 3.5 5 3.5H16"
-                                                  stroke="#0F172A" stroke-width="1.5" stroke-linecap="round"
-                                                  stroke-linejoin="round"/>
-                                        </svg>
+                    {% for result in results %}
+                        <div class="shrink-0 h-full lg:col-span-2">
+                            <div class="h-[18%] bg-[#0F172A] text-center py-5 rounded-t-[10px]">
+                                <p class="lexend-medium text-2xl md:text-[30px]">{{ result.ord_number }}-Natija</p>
+                            </div>
+                            <div class="h-[82%] bg-white px-5 py-10 text-[#0F172A] rounded-b-[10px]">
+                                <p class="lexend-regular text-xl md:text-2xl pb-[30px]">{{ result.title }}</p>
+                                {% for i in result.children.all %}
+                                    <div class="space-y-3">
+                                        <div class="flex items-center gap-[10px]">
+                                            <div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
+                                                     viewBox="0 0 24 25" fill="none">
+                                                    <path d="M9 11.5L12 14.5L22 4.5" stroke="#0F172A" stroke-width="1.5"
+                                                          stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M21 12.5V19.5C21 20.0304 20.7893 20.5391 20.4142 20.9142C20.0391 21.2893 19.5304 21.5 19 21.5H5C4.46957 21.5 3.96086 21.2893 3.58579 20.9142C3.21071 20.5391 3 20.0304 3 19.5V5.5C3 4.96957 3.21071 4.46086 3.58579 4.08579C3.96086 3.71071 4.46957 3.5 5 3.5H16"
+                                                          stroke="#0F172A" stroke-width="1.5" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            <p class="openSans-regular md:text-xl">{{ i.title }}</p>
+                                        </div>
                                     </div>
-                                    <p class="openSans-regular md:text-xl">Xodimlarning tez-tez almashinuvi</p>
-                                </div>
-                                <div class="flex items-center gap-[10px]">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
-                                             viewBox="0 0 24 25" fill="none">
-                                            <path d="M9 11.5L12 14.5L22 4.5" stroke="#0F172A" stroke-width="1.5"
-                                                  stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M21 12.5V19.5C21 20.0304 20.7893 20.5391 20.4142 20.9142C20.0391 21.2893 19.5304 21.5 19 21.5H5C4.46957 21.5 3.96086 21.2893 3.58579 20.9142C3.21071 20.5391 3 20.0304 3 19.5V5.5C3 4.96957 3.21071 4.46086 3.58579 4.08579C3.96086 3.71071 4.46957 3.5 5 3.5H16"
-                                                  stroke="#0F172A" stroke-width="1.5" stroke-linecap="round"
-                                                  stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <p class="openSans-regular md:text-xl">Xodimlarning kompaniya manfaatlari uchun
-                                        harakat qilmasliklari</p>
-                                </div>
-                                <div class="flex items-center gap-[10px]">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
-                                             viewBox="0 0 24 25" fill="none">
-                                            <path d="M9 11.5L12 14.5L22 4.5" stroke="#0F172A" stroke-width="1.5"
-                                                  stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M21 12.5V19.5C21 20.0304 20.7893 20.5391 20.4142 20.9142C20.0391 21.2893 19.5304 21.5 19 21.5H5C4.46957 21.5 3.96086 21.2893 3.58579 20.9142C3.21071 20.5391 3 20.0304 3 19.5V5.5C3 4.96957 3.21071 4.46086 3.58579 4.08579C3.96086 3.71071 4.46957 3.5 5 3.5H16"
-                                                  stroke="#0F172A" stroke-width="1.5" stroke-linecap="round"
-                                                  stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <p class="openSans-regular md:text-xl">Xodimlaringizning biznes rivoji uchun yangi
-                                        taklif bildirmasliklari va tashabbus ko'rsatmasliklari</p>
-                                </div>
+                                {% endfor %}
+
                             </div>
                         </div>
-                    </div>
-                    <div class="shrink-0 h-full lg:col-span-2">
-                        <div class="h-[18%] bg-[#334155] text-center py-5 rounded-t-[10px]">
-                            <p class="lexend-medium text-2xl md:text-[30px]">2-Natija</p>
-                        </div>
-                        <div class=" h-[82%] bg-white px-5 py-10 text-[#0F172A] rounded-b-[10px]">
-                            <p class="lexend-regular text-xl md:text-2xl pb-[30px]">HR rejalash</p>
-                            <div class="space-y-3">
-                                <div class="flex items-center gap-[10px]">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
-                                             viewBox="0 0 24 25" fill="none">
-                                            <path d="M9 11.5L12 14.5L22 4.5" stroke="#0F172A" stroke-width="1.5"
-                                                  stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M21 12.5V19.5C21 20.0304 20.7893 20.5391 20.4142 20.9142C20.0391 21.2893 19.5304 21.5 19 21.5H5C4.46957 21.5 3.96086 21.2893 3.58579 20.9142C3.21071 20.5391 3 20.0304 3 19.5V5.5C3 4.96957 3.21071 4.46086 3.58579 4.08579C3.96086 3.71071 4.46957 3.5 5 3.5H16"
-                                                  stroke="#0F172A" stroke-width="1.5" stroke-linecap="round"
-                                                  stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <p class="openSans-regular md:text-xl">Rejalarning o'z vaqtida bajarilmasligi</p>
-                                </div>
-                                <div class="flex items-center gap-[10px]">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
-                                             viewBox="0 0 24 25" fill="none">
-                                            <path d="M9 11.5L12 14.5L22 4.5" stroke="#0F172A" stroke-width="1.5"
-                                                  stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M21 12.5V19.5C21 20.0304 20.7893 20.5391 20.4142 20.9142C20.0391 21.2893 19.5304 21.5 19 21.5H5C4.46957 21.5 3.96086 21.2893 3.58579 20.9142C3.21071 20.5391 3 20.0304 3 19.5V5.5C3 4.96957 3.21071 4.46086 3.58579 4.08579C3.96086 3.71071 4.46957 3.5 5 3.5H16"
-                                                  stroke="#0F172A" stroke-width="1.5" stroke-linecap="round"
-                                                  stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <p class="openSans-regular md:text-xl">Xodimlaringizda bo'sh vaqting ko'p
-                                        bo'lishi</p>
-                                </div>
-                                <div class="flex items-center gap-[10px]">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
-                                             viewBox="0 0 24 25" fill="none">
-                                            <path d="M9 11.5L12 14.5L22 4.5" stroke="#0F172A" stroke-width="1.5"
-                                                  stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M21 12.5V19.5C21 20.0304 20.7893 20.5391 20.4142 20.9142C20.0391 21.2893 19.5304 21.5 19 21.5H5C4.46957 21.5 3.96086 21.2893 3.58579 20.9142C3.21071 20.5391 3 20.0304 3 19.5V5.5C3 4.96957 3.21071 4.46086 3.58579 4.08579C3.96086 3.71071 4.46957 3.5 5 3.5H16"
-                                                  stroke="#0F172A" stroke-width="1.5" stroke-linecap="round"
-                                                  stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <p class="openSans-regular md:text-xl">Mutaxassis kadrlar yetishmasligi</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shrink-0 h-full lg:col-span-2">
-                        <div class="h-[18%] bg-[#334155] text-center py-5 rounded-t-[10px]">
-                            <p class="lexend-medium text-2xl md:text-[30px]">3-Natija</p>
-                        </div>
-                        <div class=" h-[82%] bg-white px-5 py-10 text-[#0F172A] rounded-b-[10px]">
-                            <p class="lexend-regular text-xl md:text-2xl pb-[30px]">Ishga olishning samarali tizimini
-                                qurish</p>
-                            <div class="space-y-3">
-                                <div class="flex items-center gap-[10px]">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
-                                             viewBox="0 0 24 25" fill="none">
-                                            <path d="M9 11.5L12 14.5L22 4.5" stroke="#0F172A" stroke-width="1.5"
-                                                  stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M21 12.5V19.5C21 20.0304 20.7893 20.5391 20.4142 20.9142C20.0391 21.2893 19.5304 21.5 19 21.5H5C4.46957 21.5 3.96086 21.2893 3.58579 20.9142C3.21071 20.5391 3 20.0304 3 19.5V5.5C3 4.96957 3.21071 4.46086 3.58579 4.08579C3.96086 3.71071 4.46957 3.5 5 3.5H16"
-                                                  stroke="#0F172A" stroke-width="1.5" stroke-linecap="round"
-                                                  stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <p class="openSans-regular md:text-xl">Xodimlarning tez-tez almashinuvi</p>
-                                </div>
-                                <div class="flex items-center gap-[10px]">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
-                                             viewBox="0 0 24 25" fill="none">
-                                            <path d="M9 11.5L12 14.5L22 4.5" stroke="#0F172A" stroke-width="1.5"
-                                                  stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M21 12.5V19.5C21 20.0304 20.7893 20.5391 20.4142 20.9142C20.0391 21.2893 19.5304 21.5 19 21.5H5C4.46957 21.5 3.96086 21.2893 3.58579 20.9142C3.21071 20.5391 3 20.0304 3 19.5V5.5C3 4.96957 3.21071 4.46086 3.58579 4.08579C3.96086 3.71071 4.46957 3.5 5 3.5H16"
-                                                  stroke="#0F172A" stroke-width="1.5" stroke-linecap="round"
-                                                  stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <p class="openSans-regular md:text-xl">Xodimlarning kompaniya manfaatlari uchun
-                                        harakat qilmasliklari</p>
-                                </div>
-                                <div class="flex items-center gap-[10px]">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
-                                             viewBox="0 0 24 25" fill="none">
-                                            <path d="M9 11.5L12 14.5L22 4.5" stroke="#0F172A" stroke-width="1.5"
-                                                  stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M21 12.5V19.5C21 20.0304 20.7893 20.5391 20.4142 20.9142C20.0391 21.2893 19.5304 21.5 19 21.5H5C4.46957 21.5 3.96086 21.2893 3.58579 20.9142C3.21071 20.5391 3 20.0304 3 19.5V5.5C3 4.96957 3.21071 4.46086 3.58579 4.08579C3.96086 3.71071 4.46957 3.5 5 3.5H16"
-                                                  stroke="#0F172A" stroke-width="1.5" stroke-linecap="round"
-                                                  stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <p class="openSans-regular md:text-xl">Xodimlaringizning biznes rivoji uchun yangi
-                                        taklif bildirmasliklari va tashabbus ko'rsatmasliklari</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shrink-0 h-full lg:col-span-3 lg:max-w-[400px] place-self-end">
-                        <div class="h-[18%] bg-[#94A3B8] text-center py-5 rounded-t-[10px]">
-                            <p class="lexend-medium text-2xl md:text-[30px]">4-Natija</p>
-                        </div>
-                        <div class=" h-[82%] bg-white px-5 py-10 text-[#0F172A] rounded-b-[10px]">
-                            <p class="lexend-regular text-xl md:text-2xl pb-[30px]">Yangi xodimlarni adaptatsiya qilish
-                                tizimi</p>
-                            <div class="space-y-3">
-                                <div class="flex items-center gap-[10px]">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
-                                             viewBox="0 0 24 25" fill="none">
-                                            <path d="M9 11.5L12 14.5L22 4.5" stroke="#0F172A" stroke-width="1.5"
-                                                  stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M21 12.5V19.5C21 20.0304 20.7893 20.5391 20.4142 20.9142C20.0391 21.2893 19.5304 21.5 19 21.5H5C4.46957 21.5 3.96086 21.2893 3.58579 20.9142C3.21071 20.5391 3 20.0304 3 19.5V5.5C3 4.96957 3.21071 4.46086 3.58579 4.08579C3.96086 3.71071 4.46957 3.5 5 3.5H16"
-                                                  stroke="#0F172A" stroke-width="1.5" stroke-linecap="round"
-                                                  stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <p class="openSans-regular md:text-xl">Xodimlarning tez-tez almashinuvi</p>
-                                </div>
-                                <div class="flex items-center gap-[10px]">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
-                                             viewBox="0 0 24 25" fill="none">
-                                            <path d="M9 11.5L12 14.5L22 4.5" stroke="#0F172A" stroke-width="1.5"
-                                                  stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M21 12.5V19.5C21 20.0304 20.7893 20.5391 20.4142 20.9142C20.0391 21.2893 19.5304 21.5 19 21.5H5C4.46957 21.5 3.96086 21.2893 3.58579 20.9142C3.21071 20.5391 3 20.0304 3 19.5V5.5C3 4.96957 3.21071 4.46086 3.58579 4.08579C3.96086 3.71071 4.46957 3.5 5 3.5H16"
-                                                  stroke="#0F172A" stroke-width="1.5" stroke-linecap="round"
-                                                  stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <p class="openSans-regular md:text-xl">Xodimlarning kompaniya manfaatlari uchun
-                                        harakat qilmasliklari</p>
-                                </div>
-                                <div class="flex items-center gap-[10px]">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
-                                             viewBox="0 0 24 25" fill="none">
-                                            <path d="M9 11.5L12 14.5L22 4.5" stroke="#0F172A" stroke-width="1.5"
-                                                  stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M21 12.5V19.5C21 20.0304 20.7893 20.5391 20.4142 20.9142C20.0391 21.2893 19.5304 21.5 19 21.5H5C4.46957 21.5 3.96086 21.2893 3.58579 20.9142C3.21071 20.5391 3 20.0304 3 19.5V5.5C3 4.96957 3.21071 4.46086 3.58579 4.08579C3.96086 3.71071 4.46957 3.5 5 3.5H16"
-                                                  stroke="#0F172A" stroke-width="1.5" stroke-linecap="round"
-                                                  stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <p class="openSans-regular md:text-xl">Xodimlaringizning biznes rivoji uchun yangi
-                                        taklif bildirmasliklari va tashabbus ko'rsatmasliklari</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shrink-0 h-full lg:col-span-3 lg:max-w-[400px] place-self-start">
-                        <div class="h-[18%] bg-[#CBD5E1] text-center py-5 rounded-t-[10px]">
-                            <p class="lexend-medium text-2xl md:text-[30px]">5-Natija</p>
-                        </div>
-                        <div class=" h-[82%] bg-white px-5 py-10 text-[#0F172A] rounded-b-[10px]">
-                            <p class="lexend-regular text-xl md:text-2xl pb-[30px]">Maosh va imtiyozlar tizimini
-                                qurish</p>
-                            <div class="space-y-3">
-                                <div class="flex items-center gap-[10px]">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
-                                             viewBox="0 0 24 25" fill="none">
-                                            <path d="M9 11.5L12 14.5L22 4.5" stroke="#0F172A" stroke-width="1.5"
-                                                  stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M21 12.5V19.5C21 20.0304 20.7893 20.5391 20.4142 20.9142C20.0391 21.2893 19.5304 21.5 19 21.5H5C4.46957 21.5 3.96086 21.2893 3.58579 20.9142C3.21071 20.5391 3 20.0304 3 19.5V5.5C3 4.96957 3.21071 4.46086 3.58579 4.08579C3.96086 3.71071 4.46957 3.5 5 3.5H16"
-                                                  stroke="#0F172A" stroke-width="1.5" stroke-linecap="round"
-                                                  stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <p class="openSans-regular md:text-xl">Xodimlarning tez-tez almashinuvi</p>
-                                </div>
-                                <div class="flex items-center gap-[10px]">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
-                                             viewBox="0 0 24 25" fill="none">
-                                            <path d="M9 11.5L12 14.5L22 4.5" stroke="#0F172A" stroke-width="1.5"
-                                                  stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M21 12.5V19.5C21 20.0304 20.7893 20.5391 20.4142 20.9142C20.0391 21.2893 19.5304 21.5 19 21.5H5C4.46957 21.5 3.96086 21.2893 3.58579 20.9142C3.21071 20.5391 3 20.0304 3 19.5V5.5C3 4.96957 3.21071 4.46086 3.58579 4.08579C3.96086 3.71071 4.46957 3.5 5 3.5H16"
-                                                  stroke="#0F172A" stroke-width="1.5" stroke-linecap="round"
-                                                  stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <p class="openSans-regular md:text-xl">Xodimlarning kompaniya manfaatlari uchun
-                                        harakat qilmasliklari</p>
-                                </div>
-                                <div class="flex items-center gap-[10px]">
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
-                                             viewBox="0 0 24 25" fill="none">
-                                            <path d="M9 11.5L12 14.5L22 4.5" stroke="#0F172A" stroke-width="1.5"
-                                                  stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M21 12.5V19.5C21 20.0304 20.7893 20.5391 20.4142 20.9142C20.0391 21.2893 19.5304 21.5 19 21.5H5C4.46957 21.5 3.96086 21.2893 3.58579 20.9142C3.21071 20.5391 3 20.0304 3 19.5V5.5C3 4.96957 3.21071 4.46086 3.58579 4.08579C3.96086 3.71071 4.46957 3.5 5 3.5H16"
-                                                  stroke="#0F172A" stroke-width="1.5" stroke-linecap="round"
-                                                  stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <p class="openSans-regular md:text-xl">Xodimlaringizning biznes rivoji uchun yangi
-                                        taklif bildirmasliklari va tashabbus ko'rsatmasliklari</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
+
                 </div>
                 <a href=""
                    class="block mx-auto w-fit py-3 sm:py-[14px] px-4 sm:px-7 text-center rounded-[4px] bg-[#1E293B] sm:text-xl montserrat-medium border border-white">Kursga
@@ -393,78 +156,22 @@
                         <div class="swiper-slide">
                             <h2 class="text-[30px] sm:text-[38px] md:text-[48px] text-left lexend-medium pb-10 md:pb-20 lg:pb-[100px]">
                                 O’quvchilarimiz fikri</h2>
-                            <div class="flex flex-col lg:flex-row justify-between items-center gap-[75px]">
-                                <div class="text-left">
-                                    <p class="openSans-regular sm:text-2xl pb-8 md:pb-20">“Qurilish xodimlariga qanday
-                                        KPI qo’yishni bilmas edim. Instagram orqali Kozimxon akani ko’rib qoldim va ular
-                                        berayotgan ma’lumotlar menda ishonch uyg’otdi.”</p>
-                                    <p class="openSans-semibold text-sm sm:text-xl">Saodat Xolmuhammedova</p>
+                            {% for feedback in feedbacks %}
+                                <div class="flex flex-col lg:flex-row justify-between items-center gap-[75px]">
+                                    <div class="text-left">
+                                        <p class="openSans-regular sm:text-2xl pb-8 md:pb-20">{{ feedback.comment }}</p>
+                                        <p class="openSans-semibold text-sm sm:text-xl">{{ feedback.author }}</p>
+                                    </div>
+                                    <div class="w-full h-[335px] aspect-square">
+                                        <iframe class="w-full h-full object-contain" width="100%"
+                                                src="{{ feedback.link }}"
+                                                title="YouTube video player" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                allowfullscreen></iframe>
+                                    </div>
                                 </div>
-                                <div class="w-full h-[335px] aspect-square">
-                                    <iframe class="w-full h-full object-contain" width="100%"
-                                            src="https://www.youtube.com/embed/z4o1f_LNYlM?si=P7me6FAA2drapHiR"
-                                            title="YouTube video player" frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            allowfullscreen></iframe>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <h2 class="text-[30px] sm:text-[38px] md:text-[48px] text-left lexend-medium pb-10 md:pb-20 lg:pb-[100px]">
-                                O’quvchilarimiz fikri</h2>
-                            <div class="flex flex-col lg:flex-row justify-between items-center gap-[75px]">
-                                <div class="text-left">
-                                    <p class="openSans-regular sm:text-2xl pb-8 md:pb-20">“Qurilish xodimlariga qanday
-                                        KPI qo’yishni bilmas edim. Instagram orqali Kozimxon akani ko’rib qoldim va ular
-                                        berayotgan ma’lumotlar menda ishonch uyg’otdi.”</p>
-                                    <p class="openSans-semibold text-sm sm:text-xl">Saodat Xolmuhammedova</p>
-                                </div>
-                                <div class="w-full h-[335px] aspect-square">
-                                    <iframe class="w-full h-full object-contain" width="100%"
-                                            src="https://www.youtube.com/embed/z4o1f_LNYlM?si=P7me6FAA2drapHiR"
-                                            title="YouTube video player" frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            allowfullscreen></iframe>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <h2 class="text-[30px] sm:text-[38px] md:text-[48px] text-left lexend-medium pb-10 md:pb-20 lg:pb-[100px]">
-                                O’quvchilarimiz fikri</h2>
-                            <div class="flex flex-col lg:flex-row justify-between items-center gap-[75px]">
-                                <div class="text-left">
-                                    <p class="openSans-regular sm:text-2xl pb-8 md:pb-20">“Qurilish xodimlariga qanday
-                                        KPI qo’yishni bilmas edim. Instagram orqali Kozimxon akani ko’rib qoldim va ular
-                                        berayotgan ma’lumotlar menda ishonch uyg’otdi.”</p>
-                                    <p class="openSans-semibold text-sm sm:text-xl">Saodat Xolmuhammedova</p>
-                                </div>
-                                <div class="w-full h-[335px] aspect-square">
-                                    <iframe class="w-full h-full object-contain" width="100%"
-                                            src="https://www.youtube.com/embed/z4o1f_LNYlM?si=P7me6FAA2drapHiR"
-                                            title="YouTube video player" frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            allowfullscreen></iframe>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <h2 class="text-[30px] sm:text-[38px] md:text-[48px] text-left lexend-medium pb-10 md:pb-20 lg:pb-[100px]">
-                                O’quvchilarimiz fikri</h2>
-                            <div class="flex flex-col lg:flex-row justify-between items-center gap-[75px]">
-                                <div class="text-left">
-                                    <p class="openSans-regular sm:text-2xl pb-8 md:pb-20">“Qurilish xodimlariga qanday
-                                        KPI qo’yishni bilmas edim. Instagram orqali Kozimxon akani ko’rib qoldim va ular
-                                        berayotgan ma’lumotlar menda ishonch uyg’otdi.”</p>
-                                    <p class="openSans-semibold text-sm sm:text-xl">Saodat Xolmuhammedova</p>
-                                </div>
-                                <div class="w-full h-[335px] aspect-square">
-                                    <iframe class="w-full h-full object-contain" width="100%"
-                                            src="https://www.youtube.com/embed/z4o1f_LNYlM?si=P7me6FAA2drapHiR"
-                                            title="YouTube video player" frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            allowfullscreen></iframe>
-                                </div>
-                            </div>
+                            {% endfor %}
+
                         </div>
                     </div>
                     <div class="flex items-center justify-center gap-[60px]">
@@ -497,206 +204,29 @@
                 <h2 class="text-[30px] sm:text-[38px] md:text-[48px] text-center lexend-medium pb-10 md:pb-20 lg:pb-[50px]">
                     Tariflar</h2>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-[22px] text-[#0F172A] pb-[30px]">
-                    <div class="h-fit rounded-[10px] bg-[#F1F5F9] p-5 sm:py-[50px] sm:px-[30px]">
-                        <h3 class="lexend-medium text-3xl sm:text-[36px] pb-3">Standart</h3>
-                        <p class="lexend-medium text-2xl sm:text-[30px] pb-[30px]">9 000 000 so'm</p>
-                        <div class="sm:text-xl openSans-semibold space-y-2">
-                            <div class="flex gap-4">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
-                                         fill="none">
-                                        <path d="M20 6.5L9 17.5L4 12.5" stroke="#0F172A" stroke-width="2"
-                                              stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <p>5 haftalik kurs</p>
-                            </div>
-                            <div class="flex gap-4">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
-                                         fill="none">
-                                        <path d="M20 6.5L9 17.5L4 12.5" stroke="#0F172A" stroke-width="2"
-                                              stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <p>1 qatnashchi</p>
-                            </div>
-                            <div class="flex gap-4">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
-                                         fill="none">
-                                        <path d="M20 6.5L9 17.5L4 12.5" stroke="#0F172A" stroke-width="2"
-                                              stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <p>Tarqatma materiallar</p>
-                            </div>
-                            <div class="flex gap-4">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
-                                         fill="none">
-                                        <path d="M20 6.5L9 17.5L4 12.5" stroke="#0F172A" stroke-width="2"
-                                              stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <p>Dars videolarini 1 oy davomida ko'rish imkoniyati</p>
-                            </div>
-                            <div class="flex gap-4">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
-                                         fill="none">
-                                        <path d="M20 6.5L9 17.5L4 12.5" stroke="#0F172A" stroke-width="2"
-                                              stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <p>Koordinatorlar yordamida vazifa va topshiriqlarni bajarish</p>
+                    {% for service in services %}
+                        <div class="h-fit rounded-[10px] bg-[#F1F5F9] p-5 sm:py-[50px] sm:px-[30px]">
+                            <h3 class="lexend-medium text-3xl sm:text-[36px] pb-3">{{ service.title }}</h3>
+                            <p class="lexend-medium text-2xl sm:text-[30px] pb-[30px]">{{ service.price }} so'm</p>
+                            <div class="sm:text-xl openSans-semibold space-y-2">
+                                {% for child in service.service_children.all %}
+                                    <div class="flex gap-4">
+
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
+                                                 viewBox="0 0 24 25"
+                                                 fill="none">
+                                                <path d="M20 6.5L9 17.5L4 12.5" stroke="#0F172A" stroke-width="2"
+                                                      stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <p>{{ child.text }}</p>
+                                    </div>
+                                {% endfor %}
                             </div>
                         </div>
-                    </div>
-                    <div class="h-fit rounded-[10px] bg-[#F1F5F9] p-5 sm:py-[50px] sm:px-[30px]">
-                        <h3 class="lexend-medium text-3xl sm:text-[36px] text-[#CA8A04] pb-3">Premium</h3>
-                        <p class="lexend-medium text-2xl sm:text-[30px] pb-[30px]">12 000 000 so'm</p>
-                        <div class="sm:text-xl openSans-semibold space-y-2">
-                            <div class="flex gap-4">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
-                                         fill="none">
-                                        <path d="M20 6.5L9 17.5L4 12.5" stroke="#0F172A" stroke-width="2"
-                                              stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <p>5 haftalik kurs</p>
-                            </div>
-                            <div class="flex gap-4">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
-                                         fill="none">
-                                        <path d="M20 6.5L9 17.5L4 12.5" stroke="#0F172A" stroke-width="2"
-                                              stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <p>1 qatnashchi</p>
-                            </div>
-                            <div class="flex gap-4">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
-                                         fill="none">
-                                        <path d="M20 6.5L9 17.5L4 12.5" stroke="#0F172A" stroke-width="2"
-                                              stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <p>Tarqatma materiallar</p>
-                            </div>
-                            <div class="flex gap-4">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
-                                         fill="none">
-                                        <path d="M20 6.5L9 17.5L4 12.5" stroke="#0F172A" stroke-width="2"
-                                              stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <p>Dars videolarini 1 oy davomida ko'rish imkoniyati</p>
-                            </div>
-                            <div class="flex gap-4">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
-                                         fill="none">
-                                        <path d="M20 6.5L9 17.5L4 12.5" stroke="#0F172A" stroke-width="2"
-                                              stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <p>Koordinatorlar yordamida vazifa va topshiriqlarni bajarish</p>
-                            </div>
-                            <div class="flex gap-4">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
-                                         fill="none">
-                                        <path d="M20 6.5L9 17.5L4 12.5" stroke="#0F172A" stroke-width="2"
-                                              stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <p>Kozimxon To'rayev bilan 2 soatlik bepul konsalting xizmati</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="h-fit rounded-[10px] bg-[#F1F5F9] p-5 sm:py-[50px] sm:px-[30px]">
-                        <h3 class="lexend-medium text-3xl sm:text-[36px] text-[#991B1B] pb-3">VIP</h3>
-                        <p class="lexend-medium text-2xl sm:text-[30px] pb-[30px]">50 000 000 so'm</p>
-                        <div class="sm:text-xl openSans-semibold space-y-2">
-                            <div class="flex gap-4">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
-                                         fill="none">
-                                        <path d="M20 6.5L9 17.5L4 12.5" stroke="#0F172A" stroke-width="2"
-                                              stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <p>5 haftalik kurs</p>
-                            </div>
-                            <div class="flex gap-4">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
-                                         fill="none">
-                                        <path d="M20 6.5L9 17.5L4 12.5" stroke="#0F172A" stroke-width="2"
-                                              stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <p>3 qatnashchi</p>
-                            </div>
-                            <div class="flex gap-4">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
-                                         fill="none">
-                                        <path d="M20 6.5L9 17.5L4 12.5" stroke="#0F172A" stroke-width="2"
-                                              stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <p>Tarqatma materiallar</p>
-                            </div>
-                            <div class="flex gap-4">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
-                                         fill="none">
-                                        <path d="M20 6.5L9 17.5L4 12.5" stroke="#0F172A" stroke-width="2"
-                                              stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <p>Dars videolarini 3 oy davomida ko'rish imkoniyati</p>
-                            </div>
-                            <div class="flex gap-4">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
-                                         fill="none">
-                                        <path d="M20 6.5L9 17.5L4 12.5" stroke="#0F172A" stroke-width="2"
-                                              stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <p>Shaxsan Kozimxon To'rayev yordamida vazifa va topshiriqlarni bajarish</p>
-                            </div>
-                            <div class="flex gap-4">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
-                                         fill="none">
-                                        <path d="M20 6.5L9 17.5L4 12.5" stroke="#0F172A" stroke-width="2"
-                                              stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <p>Kurs davomida har hafta bir marta trener bilan darsdan so'ng 1soatlik bepul
-                                    konsalting xizmati</p>
-                            </div>
-                            <div class="flex gap-4">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
-                                         fill="none">
-                                        <path d="M20 6.5L9 17.5L4 12.5" stroke="#0F172A" stroke-width="2"
-                                              stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <p>Kurs davomida har hafta bir marta trener bilan darsdan so'ng 1soatlik bepul
-                                    konsalting xizmati</p>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
+
                 </div>
                 <a href=""
                    class="block mx-auto w-fit py-3 sm:py-[14px] px-4 sm:px-7 text-center rounded-[4px] bg-[#1E293B] sm:text-xl montserrat-medium border border-white">Kursga
@@ -710,21 +240,15 @@
                 <h2 class="text-[30px] sm:text-[38px] md:text-[48px] lexend-medium pb-10 md:pb-20 lg:pb-[50px]">
                     Sarmoyangiz mutlaqo xavfsiz!</h2>
                 <div class="max-w-[600px] pb-[15px] sm:pb-[30px]">
-                    <p class="openSans-regular sm:text-2xl">Xalqaro standartlarga asoslangan HR menejment kursimiz 17
-                        yil davomida AQSh, Yaponiya va Saudiya Arabistonida o’qish va ishlash natijasida orttirilgan
-                        bilim va tajribalar asosida ishlab chiqilgan</p>
+                    <p class="openSans-regular sm:text-2xl">{{ about1.text }}</p>
                 </div>
                 <div class="w-full py-[15px] sm:py-[30px] md:flex flex-col items-end gap-y-5">
                     <div class="max-w-[600px]">
-                        <p class="openSans-regular sm:text-2xl">Shu vaqtgacha, minglab insonlarga bu bilimlarni ulashish
-                            nasib qildi. Inshaalloh, 5-avgust kuni boshlanadigan kursimizda sizga ham mana shu qimmatli
-                            bilimlarimni ulashmoqchimiz.</p>
+                        <p class="openSans-regular sm:text-2xl">{{ about2.text }}</p>
                     </div>
                 </div>
                 <div class="max-w-[600px] pt-[15px] sm:pt-[30px] pb-[30px] sm:pb-[60px]">
-                    <p class="openSans-regular sm:text-2xl">Shuni yodda tutingki, kursdan so’ng undan biror manfaat
-                        olomasangiz to’lovingizni 100% qaytarib beriladi. Kafolatlangan sarmoya bilan keyingi
-                        pog’onalarni zabt eting.</p>
+                    <p class="openSans-regular sm:text-2xl">{{ about3.text }}</p>
                 </div>
                 <a href=""
                    class="block w-fit mx-auto py-3 sm:py-[14px] px-4 sm:px-7 text-center rounded-[4px] bg-[#F1F5F9] text-[#1E293B] sm:text-xl montserrat-bold">Kursga

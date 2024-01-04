@@ -1,25 +1,28 @@
 import os
 from pathlib import Path
+
 from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 load_dotenv()
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.getenv("SECRET_KEY")
 
-DEBUG = os.getenv('DEBUG')
+DEBUG = os.getenv("DEBUG")
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
+    "baton",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'app'
+    "app",
+    "baton.autodiscover",
 ]
 
 MIDDLEWARE = [
@@ -37,7 +40,7 @@ ROOT_URLCONF = "root.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / 'templates'],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -54,24 +57,29 @@ WSGI_APPLICATION = "root.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": os.getenv("POSTGRES_DB"),
+        "USER": os.getenv("POSTGRES_USER"),
+        "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
+        "HOST": os.getenv("POSTGRES_HOST"),
+        "PORT": os.getenv("POSTGRES_PORT"),
+        "DISABLE_SERVER_SIDE_CURSORS": True,
     }
 }
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
-    },
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+    # },
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+    # },
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+    # },
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+    # },
 ]
 
 LANGUAGE_CODE = "en-us"
@@ -82,10 +90,10 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # noqa
+STATIC_URL = "static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "static")  # noqa
 
-MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # noqa
+MEDIA_URL = "media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")  # noqa
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
