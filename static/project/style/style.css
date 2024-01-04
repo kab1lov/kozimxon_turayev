@@ -1,0 +1,77 @@
+@font-face {
+  font-family: 'Open-sans-regular';
+  src: url(../fonts/Open_Sans/OpenSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Open-sans-semibold';
+  src: url(../fonts/Open_Sans/OpenSans-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: 'Open-sans-bold';
+  src: url(../fonts/Open_Sans/OpenSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Montserrat-medium';
+  src: url(../fonts/Montserrat/Montserrat-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'Montserrat-bold';
+  src: url(../fonts/Montserrat/Montserrat-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Lexend-regular';
+  src: url(../fonts/Lexend/Lexend-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Lexend-medium';
+  src: url(../fonts/Lexend/Lexend-Medium.ttf);
+}
+
+.openSans-regular {
+  font-family: 'Open-sans-regular';
+  font-weight: 400;
+}
+
+.openSans-semibold {
+  font-family: 'Open-sans-semibold';
+  font-weight: 600;
+}
+
+.openSans-bold {
+  font-family: 'Open-sans-bold';
+  font-weight: 700;
+}
+
+.montserrat-medium {
+  font-family: 'Montserrat-medium';
+  font-weight: 500;
+}
+
+.montserrat-bold {
+  font-family: 'Montserrat-bold';
+  font-weight: 700;
+}
+
+.lexend-regular {
+  font-family: 'Lexend-regular';
+  font-weight: 400;
+}
+
+.lexend-medium {
+  font-family: 'Lexend-medium';
+  font-weight: 500;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
